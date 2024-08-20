@@ -5,11 +5,13 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
-export default function Cards({ title, body, route }) {
+export default function Cards({ title, body, route, image }) {
   const router = useRouter();
   return (
     <Card sx={{ width: 200 }}>
+      {image && <Image width={330} height={200} src={image} />}
       <CardContent>
         <Typography variant="h5" component="div">
           {title}

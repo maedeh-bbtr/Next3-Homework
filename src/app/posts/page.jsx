@@ -1,7 +1,16 @@
 import getData from "@/utils/getData";
 import Typography from "@mui/material/Typography";
 import { Container, Stack } from "@mui/material";
-import Cards from "@/components/Card";
+import dynamic from "next/dynamic";
+
+export const metadata = {
+  title: "Posts",
+  description: "this is a posts page",
+};
+
+const Cards = dynamic(() => import("@/components/Card"), {
+  loading: () => <p>Loading...</p>,
+});
 
 export default async function page() {
   const { posts } = await getData("https://dummyjson.com/posts");

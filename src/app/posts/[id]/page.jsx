@@ -2,6 +2,13 @@ import { Container, Stack, Typography } from "@mui/material";
 import { notFound } from "next/navigation";
 import getData from "@/utils/getData";
 
+export async function generateMetadata({ params }) {
+  return {
+    title: `post - ${params.id}`,
+    description: `post - ${params.title}`,
+  };
+}
+
 export default async function page({ params }) {
   const { posts } = await getData("https://dummyjson.com/posts");
   const id = params.id;
