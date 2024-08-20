@@ -1,10 +1,7 @@
 import getData from "@/utils/getData";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Container, Stack } from "@mui/material";
+import Cards from "@/components/Card";
 
 export default async function page() {
   const { users } = await getData("https://dummyjson.com/users");
@@ -20,31 +17,11 @@ export default async function page() {
           justifyContent="center"
         >
           {users.map((el) => (
-            <Card sx={{ minWidth: 275 }}>
-              <CardContent>
-                <Typography
-                  sx={{ fontSize: 14 }}
-                  color="text.secondary"
-                  gutterBottom
-                >
-                  {el.role}
-                </Typography>
-                <Typography variant="h5" component="div">
-                  {el.firstName} {el.lastName}
-                </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                  gender: {el.gender} - age: {el.age}
-                </Typography>
-                <Typography variant="body2">
-                  {el.email}
-                  <br />
-                  {el.phone}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small">More</Button>
-              </CardActions>
-            </Card>
+            <Cards
+              title={el.username}
+              body={`${el.gender} - age: ${el.age}`}
+              route={`/users/${el.id}`}
+            />
           ))}
         </Stack>
       </Container>

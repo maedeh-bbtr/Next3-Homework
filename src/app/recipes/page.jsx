@@ -1,10 +1,7 @@
 import getData from "@/utils/getData";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Container, Stack } from "@mui/material";
+import Cards from "@/components/Card";
 
 export default async function page() {
   const { recipes } = await getData("https://dummyjson.com/recipes");
@@ -20,19 +17,11 @@ export default async function page() {
           justifyContent="center"
         >
           {recipes.map((el) => (
-            <Card sx={{ maxWidth: 350 }}>
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  {el.name}
-                </Typography>
-                <Typography variant="body2">
-                  {el.ingredients.map((ingredient) => ingredient)}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small">More</Button>
-              </CardActions>
-            </Card>
+            <Cards
+              title={el.name}
+              body={`tags: ${el.tags[0]} - ${el.tags[1]}`}
+              route={`/recipes/${el.id}`}
+            />
           ))}
         </Stack>
       </Container>
