@@ -1,3 +1,4 @@
+"use client";
 import { Button, Container, Stack, Typography } from "@mui/material";
 export default function error({ error, reset }) {
   return (
