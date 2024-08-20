@@ -5,9 +5,7 @@ export default function error({ error, reset }) {
     <Container>
       <Stack alignItems="center">
         <Typography variant="h3">You got an error</Typography>
-        <Button variant="contained" onClick={() => reset()}>
-          Reset
-        </Button>
+        <Button onClick={() => reset()}>Reset</Button>
       </Stack>
     </Container>
   );
