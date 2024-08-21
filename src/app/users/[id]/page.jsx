@@ -10,9 +10,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function page({ params }) {
-  const { users } = await getData("https://dummyjson.com/users");
-  const id = params.id;
-  const user = users.find((item) => item.id == id);
+  const user = await getData(`http://localhost:3000/api/v1/users/${params.id}`);
+
   return (
     <Container sx={{ marginTop: 10 }}>
       {user ? (

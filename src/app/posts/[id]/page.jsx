@@ -10,9 +10,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function page({ params }) {
-  const { posts } = await getData("https://dummyjson.com/posts");
-  const id = params.id;
-  const post = posts.find((item) => item.id == id);
+  const post = await getData(`http://localhost:3000/api/v1/posts/${params.id}`);
   return (
     <Container sx={{ marginTop: 10 }}>
       {post ? (
