@@ -13,7 +13,7 @@ const Cards = dynamic(() => import("@/components/Card"), {
 });
 
 export default async function page() {
-  const { recipes } = await getData("https://dummyjson.com/recipes");
+  const { recipes } = await getData("http://localhost:3000/api/v1/recipes");
   return (
     <Container justifyContent="center">
       <Typography variant="h2">Recipes</Typography>
