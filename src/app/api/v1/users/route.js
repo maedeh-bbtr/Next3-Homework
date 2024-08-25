@@ -1,5 +1,5 @@
-import userData from "../../../../utils/dataUsers.json";
+import data from "../../../../data/dataUsers";
 
 export async function GET() {
-  return Response.json(await userData);
+  return Response.json(await data);
 }

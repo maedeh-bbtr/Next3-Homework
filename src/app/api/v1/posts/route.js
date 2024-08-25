@@ -1,5 +1,5 @@
-import postsData from "../../../../utils/dataPosts.json";
+import data from "../../../../data/dataPosts";
 
 export async function GET() {
-  return Response.json(await postsData);
+  return Response.json(await data);
 }

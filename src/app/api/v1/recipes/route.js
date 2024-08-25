@@ -1,5 +1,5 @@
-import recipesData from "../../../../utils/dataRecipes.json";
+import data from "../../../../data/dataRecipes";
 
 export async function GET() {
-  return Response.json(await recipesData);
+  return Response.json(await data);
 }
