@@ -24,7 +24,7 @@ export default async function page({ params }) {
             {recipe.ingredients.map((ingredient) => ingredient)}
           </Typography>
           <Typography variant="h4">
-            instruction: {recipe.instructions[0]}
+            instruction: {recipe.instructions.map((instruction) => instruction)}
           </Typography>
           <Typography>
             difficulty: {recipe.difficulty} - rating: {recipe.rating}

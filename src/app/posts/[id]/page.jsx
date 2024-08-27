@@ -18,7 +18,7 @@ export default async function page({ params }) {
           <Typography variant="h4">{post.title}</Typography>
           <Typography variant="h5">{post.body}</Typography>
           <Typography>
-            tags: {post.tags[0]} -{post.tags[1]} - {post.tags[2]}{" "}
+            tags: {post.tags[0]} -{post.tags[1]} - {post.tags[2]}
           </Typography>
           <Typography>
             likes: {post.reactions.likes} - dislikes: {post.reactions.dislikes}
