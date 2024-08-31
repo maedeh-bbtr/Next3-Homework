@@ -17,7 +17,9 @@ export async function PATCH(req, { params }) {
 }
 
 export async function DELETE(req, { params }) {
-  const newData = await data.users.filter((user) => user.id != params.id);
+  const index = await data.users.findIndex((user) => user.id == params.id);
+  const deleted = data.users[index];
+  data.users.splice(index, 1);
 
-  return Response.json(newData);
+  return Response.json(deleted);
 }
