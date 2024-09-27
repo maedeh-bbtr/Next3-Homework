@@ -11,7 +11,7 @@ export default function Cards({ title, body, route, image }) {
   const router = useRouter();
   return (
     <Card sx={{ width: 200 }}>
-      {image && <Image width={330} height={200} src={image} />}
+      {image && <Image width={330} height={200} src={image} alt={title} />}
       <CardContent>
         <Typography variant="h5" component="div">
           {title}

@@ -15,7 +15,7 @@ const Cards = dynamic(() => import("@/components/Card"), {
 export default async function page() {
   const { posts } = await getData("http://localhost:3000/api/v1/posts");
   return (
-    <Container justifyContent="center">
+    <Container sx={{ justifyContent: "center" }}>
       <Typography variant="h2">Posts</Typography>
       <Container sx={{ marginY: "40px" }}>
         <Stack
