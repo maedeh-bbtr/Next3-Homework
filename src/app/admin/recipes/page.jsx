@@ -1,6 +1,6 @@
 import { Container, Typography } from "@mui/material";
 import Form from "@/components/Form";
-import ListItems from "@/components/PostsList";
+import ListItems from "@/components/RecipesList";
 
 export default async function page() {
   const res = await fetch("http://localhost:3000/api/v1/recipes", {

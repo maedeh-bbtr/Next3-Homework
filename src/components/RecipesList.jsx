@@ -27,7 +27,7 @@ export default function ListItems({ arr }) {
               <TextField
                 size="small"
                 sx={{ width: "500px" }}
-                defaultValue={el.username}
+                defaultValue={el.name}
               />
             </ListItemText>
             <Button
