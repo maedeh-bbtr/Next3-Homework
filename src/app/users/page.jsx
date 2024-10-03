@@ -15,7 +15,7 @@ const Cards = dynamic(() => import("@/components/Card"), {
 export default async function page() {
   const { users } = await getData("http://localhost:3000/api/v1/users");
   return (
-    <Container justifyContent="center">
+    <Container sx={{ justifyContent: "center" }}>
       <Typography variant="h2">Users</Typography>
       <Container sx={{ marginY: "40px" }}>
         <Stack
@@ -27,6 +27,7 @@ export default async function page() {
         >
           {users.map((el) => (
             <Cards
+              key={el.id}
               title={el.username}
               body={`${el.gender} - age: ${el.age}`}
               route={`/users/${el.id}`}

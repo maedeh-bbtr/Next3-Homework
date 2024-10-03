@@ -1,6 +1,6 @@
-import Posts from "@/components/Posts";
-import Recipes from "@/components/Recipes";
-import Users from "@/components/Users";
+import Posts from "@/components/PostsList";
+import Recipes from "@/components/RecipesList";
+import Users from "@/components/UsersList";
 import getData from "@/utils/getData";
 import { Suspense } from "react";
 
@@ -11,13 +11,13 @@ export default async function Home() {
   return (
     <main>
       <Suspense fallback={<p>Loading users...</p>}>
-        <Users data={users} />
+        <Users arr={users} />
       </Suspense>
       <Suspense fallback={<p>Loading posts...</p>}>
-        <Posts data={posts} />
+        <Posts arr={posts} />
       </Suspense>
       <Suspense fallback={<p>Loading recipes...</p>}>
-        <Recipes data={recipes} />
+        <Recipes arr={recipes} />
       </Suspense>
     </main>
   );

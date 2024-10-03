@@ -9,7 +9,7 @@ import {
   TextField,
 } from "@mui/material";
 
-export default function ListItems({ arr }) {
+export default function Recipes({ arr }) {
   async function handleEdit(e, id) {
     await editRecipe(id, e.target.value);
   }
